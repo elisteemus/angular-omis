@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+* {
+    font-family: 'Playfair Display', serif;
+}
+
+*:focus {
+    outline:none;
+}
+
+body {
+    background-color: rgb(176, 223, 224)
+}

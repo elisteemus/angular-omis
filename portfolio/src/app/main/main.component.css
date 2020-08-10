@@ -1,0 +1,49 @@
+.main-image {
+    height: 400px;
+    width: 800px;
+    border-radius: 5%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: auto;
+    margin: 0 20%;
+}
+
+.category-image {
+   height: 150px;
+   width: 250px;
+   border-radius: 10px; 
+}
+
+.category {
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.category:hover {
+    transform: scale(1.1);
+    transition: .6s;
+    box-shadow: 0 8px 15px 0 black;
+}
+
+.categories {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-text {
+    font-size: 12px;
+}
+
+.main-text {
+    text-align: center;
+}
+
+.rectangle {
+    height: 5px;
+    width: 100px;
+    background-color: darkred;
+    margin: auto;
+}
