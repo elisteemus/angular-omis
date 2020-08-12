@@ -1,0 +1,24 @@
+<form class="cat-element" #catForm="ngForm" (ngSubmit)="onSubmit(catForm)">
+    <label>Tõug:</label><br>
+    <input ngModel class="form-control" type="text" name="breed" placeholder="Tõug" required><br>
+  
+    <label>Eesnimi:</label><br>
+    <input ngModel class="form-control" type="text" name="firstname" placeholder="Eesnimi" required><br>
+  
+    <label>Pilt:</label><br>
+    <input ngModel class="form-control" type="url" name="picture" placeholder="Pildi url" required><br><br>
+  
+    <input class="btn btn-primary" [disabled]="catForm.invalid" type="submit" value="Submit">
+  </form>
+  
+  <br><br><br><br>
+  
+  <div class="cat-element">
+  <div *ngFor="let cat of cats; let i = index" [routerLink]="['cat',i]">
+    {{ cat.breed }} <br>
+    {{ cat.firstname }} <br>
+    <img src="{{ cat.picture }}"> <br>
+  </div>
+  </div>
+  
+  <app-numbers></app-numbers>
