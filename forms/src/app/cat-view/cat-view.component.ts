@@ -9,13 +9,15 @@ import { CatService } from '../cat.service';
 })
 export class CatViewComponent implements OnInit {
   cats = [];
-  cat = {breed: "", firstname: "", picture: ""};
-  i;
+  cat: {breed: string, firstname: string, picture: string} =
+   {breed: "", firstname: "", picture: ""};
+  i: number;
 
   constructor(private route: ActivatedRoute, private catService: CatService) { }
 
   ngOnInit(): void {
-    this.cats = this.catService.cats;
+    console.log(this.catService.getCats());
+    this.cats = this.catService.getCats();
     this.route.params.subscribe( params =>
       this.i = params['id']
     )

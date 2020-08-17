@@ -17,4 +17,7 @@ export class NumbersComponent implements OnInit {
     this.numbers.push(Math.floor(Math.random() * 99) + 1  );
   }
 
+  onDelete(i: number) {
+    this.numbers.splice(i, 1);
+  }
 }

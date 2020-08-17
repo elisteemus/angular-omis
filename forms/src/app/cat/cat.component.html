@@ -14,11 +14,11 @@
   <br><br><br><br>
   
   <div class="cat-element">
-  <div *ngFor="let cat of cats; let i = index" [routerLink]="['cat',i]">
+  <div *ngFor="let cat of cats; let i = index" [routerLink]="['/cat',i]">
     {{ cat.breed }} <br>
     {{ cat.firstname }} <br>
     <img src="{{ cat.picture }}"> <br>
   </div>
   </div>
   
-  <app-numbers></app-numbers>
+  <!-- <app-numbers></app-numbers> -->

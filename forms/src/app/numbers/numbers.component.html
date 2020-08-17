@@ -1,7 +1,9 @@
 <br><br><br><br><br>
 
 <button (click)="onGenerate()">Genereeri suvaline number</button>
+<br><br><br>
 
-<div *ngFor="let number of numbers">
+<div *ngFor="let number of numbers; let i = index">
   {{ number }}
+  <button (click)="onDelete(i)">Kustuta</button>
 </div>
