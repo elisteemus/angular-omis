@@ -1,1 +1,8 @@
-<p>item-list works!</p>
+<div class="items">
+    <div class="item" *ngFor="let item of items; let i = index" [routerLink]="['item',i]">
+        <img src="{{ item.imgSrc }}"> <br>
+        <p>{{ item.title }}</p>
+        <p>{{ item.price }}</p>
+        
+    </div>
+</div>
