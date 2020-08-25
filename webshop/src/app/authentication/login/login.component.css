@@ -235,8 +235,33 @@
   .submit {
     margin-top: 40px;
     margin-bottom: 20px;
-    background: #d4af7a;
+    background: #b8c6dd;
     text-transform: uppercase;
+    border: 2px solid #969bb2;
+  }
+
+  .submit:hover {
+    /* hiirega üle minek */
+    transition: 0.5s;
+    background-color: rgb(52, 54, 65);
+  }
+
+  /*
+  .submit:focus {
+    hiirega klikk
+    background-color: darkmagenta;
+  }
+
+  .submit:active {
+    /*juba klikitud
+    background-color: darkred;
+  }
+  */
+
+  .submit:disabled {
+    /*ei ole vajutatav */
+    cursor: not-allowed;
+    background-color: rgb(203, 213, 229);
   }
   
   .fb-btn {
@@ -283,5 +308,10 @@
   .icon-link--twitter {
     left: auto;
     right: 5px;
+  }
+
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+    border-radius: 10px;
   }
   

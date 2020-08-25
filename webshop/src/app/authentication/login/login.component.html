@@ -1,19 +1,18 @@
-<p class="tip">Click on button in image container</p>
 <div class="cont" [class.s--signup]="isSignUp">
-  <div class="form sign-in">
+  <form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)" class="form sign-in">
     <h2>Welcome back,</h2>
     <label>
       <span>Email</span>
-      <input type="email" />
+      <input type="email" ngModel name="email" required/>
     </label>
     <label>
       <span>Password</span>
-      <input type="password" />
+      <input type="password" ngModel name="password" required/>
     </label>
     <p class="forgot-pass">Forgot password?</p>
-    <button type="button" class="submit">Sign In</button>
+    <button [disabled]="signInForm.invalid" type="submit" class="submit">Sign In</button>
     <button type="button" class="fb-btn">Connect with <span>facebook</span></button>
-  </div>
+  </form>
   <div class="sub-cont">
     <div class="img">
       <div class="img__text m--up">
@@ -29,29 +28,29 @@
         <span class="m--in">Sign In</span>
       </div>
     </div>
-    <div class="form sign-up">
+    <form #signUpForm="ngForm" (ngSubmit)="onSignUp(signUpForm)" class="form sign-up">
       <h2>Time to feel like home,</h2>
       <label>
         <span>Name</span>
-        <input type="text" />
+        <input type="text" ngModel name="name" required/>
       </label>
       <label>
         <span>Email</span>
-        <input type="email" />
+        <input type="email" ngModel name="email" required/>
       </label>
       <label>
         <span>Password</span>
-        <input type="password" />
+        <input type="password" ngModel name="password" required/>
       </label>
-      <button type="button" class="submit">Sign Up</button>
+      <button type="submit" [disabled]="signUpForm.invalid" class="submit">Sign Up</button>
       <button type="button" class="fb-btn">Join with <span>facebook</span></button>
-    </div>
+    </form>
   </div>
 </div>
 
-<a href="https://dribbble.com/shots/3306190-Login-Registration-form" target="_blank" class="icon-link">
+<a href="https://www.development.ee" target="_blank" class="icon-link">
   <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png">
 </a>
-<a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter">
+<a href="https://twitter.com" target="_blank" class="icon-link icon-link--twitter">
   <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
 </a>
