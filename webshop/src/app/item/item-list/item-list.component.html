@@ -1,3 +1,12 @@
+<mat-form-field appearance="fill">
+    <mat-label>Vali kategooria</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let item of items" [value]="item.category">
+        {{item.category}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
 <div class="items">
     <div class="item" *ngFor="let item of items; let i = index" [routerLink]="['item',i]">
         <img src="{{ item.imgSrc }}"> <br>
