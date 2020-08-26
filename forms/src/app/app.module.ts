@@ -8,6 +8,8 @@ import { NumbersComponent } from './numbers/numbers.component';
 import { CatViewComponent } from './cat-view/cat-view.component';
 import { CatComponent } from './cat/cat.component';
 import { MainComponent } from './main/main.component';
+import { ShortenPipe } from './cat-view/shorten.pipe';
+import { MultiplicationPipe } from './numbers/multiplication.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { MainComponent } from './main/main.component';
     NumbersComponent,
     CatViewComponent,
     CatComponent,
-    MainComponent
+    MainComponent,
+    ShortenPipe,
+    MultiplicationPipe
   ],
   imports: [
     BrowserModule,

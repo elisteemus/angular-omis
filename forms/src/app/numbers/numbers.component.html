@@ -4,6 +4,6 @@
 <br><br><br>
 
 <div *ngFor="let number of numbers; let i = index">
-  {{ number }}
+  {{ number | multiplication: 10 }}
   <button (click)="onDelete(i)">Kustuta</button>
 </div>
