@@ -1,1 +1,6 @@
-<p>cart works!</p>
+<div *ngFor="let item of cartItems">
+    <img src="{{ item.imgSrc }}"> <br>
+        <p>{{ item.title }}</p>
+        <p>{{ item.price }} € </p>
+        <br><br>
+</div>
