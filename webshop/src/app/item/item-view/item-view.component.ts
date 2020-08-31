@@ -23,4 +23,8 @@ export class ItemViewComponent implements OnInit {
 
   }
 
+  onAddToCart() {
+    console.log("abc");
+  }
+
 }

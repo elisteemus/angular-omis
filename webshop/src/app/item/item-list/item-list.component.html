@@ -1,7 +1,7 @@
 <mat-form-field appearance="fill">
     <mat-label>Vali kategooria</mat-label>
     <mat-select>
-        <mat-option *ngFor="let item of items" [value]="item.category">
+        <mat-option *ngFor="let item of items | filterUnique" [value]="item.category">
         {{item.category}}
         </mat-option>
     </mat-select>
@@ -11,7 +11,6 @@
     <div class="item" *ngFor="let item of items; let i = index" [routerLink]="['item',i]">
         <img src="{{ item.imgSrc }}"> <br>
         <p>{{ item.title }}</p>
-        <p>{{ item.price }}</p>
-        
+        <p>{{ item.price }} € </p>
     </div>
 </div>

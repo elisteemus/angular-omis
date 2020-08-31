@@ -17,6 +17,7 @@ import { SignupComponent } from './authentication/signup/signup.component';
 import { CartComponent } from './cart/cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { FilterUniquePipe } from './item/item-list/filter-unique.pipe';
 
 
 
@@ -34,7 +35,8 @@ import { MatSelectModule } from '@angular/material/select';
     AuthenticationComponent,
     LoginComponent,
     SignupComponent,
-    CartComponent
+    CartComponent,
+    FilterUniquePipe
   ],
   imports: [
     BrowserModule,
