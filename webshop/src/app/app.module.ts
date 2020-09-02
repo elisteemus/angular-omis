@@ -18,7 +18,7 @@ import { CartComponent } from './cart/cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { FilterUniquePipe } from './item/item-list/filter-unique.pipe';
-
+import { ToastService, AngularToastifyModule } from 'angular-toastify'; 
 
 
 @NgModule({
@@ -43,9 +43,10 @@ import { FilterUniquePipe } from './item/item-list/filter-unique.pipe';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    AngularToastifyModule,
   ],
-  providers: [],
+  providers: [ToastService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

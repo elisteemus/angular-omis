@@ -1,6 +1,14 @@
-<div *ngFor="let item of cartItems">
-    <img src="{{ item.imgSrc }}"> <br>
-        <p>{{ item.title }}</p>
-        <p>{{ item.price }} € </p>
+<div class="cart-page" *ngIf="cartItems.length > 0">
+    <button (click)="onDelete()">Tühjenda ostukorv</button>
+
+    <div class="cart-item" *ngFor="let item of cartItems; let i =index">
+        <img src="{{ item.imgSrc }}"> <br>
+        <p class="cell">{{ item.title }}</p>
+        <p class="cell">{{ item.price }} € </p>
+        <img class="delete-button" (click)="onDeleteOne(i)" src="assets\trashbin.png">
         <br><br>
+    </div>
+    <div class="total-sum">SUMMA KOKKU: {{ cartSum }} € </div>
 </div>
+ 
+<div *ngIf="cartItems.length == 0">Esemeid ostukorvis pole</div>

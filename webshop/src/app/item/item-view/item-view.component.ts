@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../item.service';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../../cart/cart.service'
+import { ToastService } from 'angular-toastify';
 
 @Component({
   selector: 'app-item-view',
@@ -11,8 +12,12 @@ import { CartService } from '../../cart/cart.service'
 export class ItemViewComponent implements OnInit {
   item: {imgSrc: string, title:string, price: string, category:string};
 
-  constructor(private itemService: ItemService,
-    private route: ActivatedRoute, private cartService: CartService) { }
+  constructor(
+    private itemService: ItemService,
+    private route: ActivatedRoute,
+    private cartService: CartService,
+    private _toastService: ToastService,
+    ) { }
 
   ngOnInit(): void {
   
@@ -26,6 +31,7 @@ export class ItemViewComponent implements OnInit {
 
   onAddToCart() {
     this.cartService.addItem(this.item);
+    this._toastService.success('Edukalt ostukorvi lisatud');
   }
 
 }

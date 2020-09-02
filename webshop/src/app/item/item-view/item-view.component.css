@@ -17,3 +17,13 @@
 .item p {
     padding: 0 15px; 
  }
+
+ .add-to-cart {
+     cursor: pointer;
+     opacity: 0.7;
+ }
+
+ .add-to-cart:hover {
+    cursor: pointer;
+    opacity: 1;
+}
