@@ -10,6 +10,7 @@ import { CatComponent } from './cat/cat.component';
 import { MainComponent } from './main/main.component';
 import { ShortenPipe } from './cat-view/shorten.pipe';
 import { MultiplicationPipe } from './numbers/multiplication.pipe';
+import { CatSelectComponent } from './cat-select/cat-select.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MultiplicationPipe } from './numbers/multiplication.pipe';
     CatComponent,
     MainComponent,
     ShortenPipe,
-    MultiplicationPipe
+    MultiplicationPipe,
+    CatSelectComponent
   ],
   imports: [
     BrowserModule,

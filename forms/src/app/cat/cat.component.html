@@ -1,3 +1,5 @@
+<a routerLink="/selected-cats">Mine vaata valitud kasse</a>
+
 <form class="cat-element" #catForm="ngForm" (ngSubmit)="onSubmit(catForm)">
     <label>Tõug:</label><br>
     <input ngModel class="form-control" type="text" name="breed" placeholder="Tõug" required><br>
@@ -14,10 +16,14 @@
   <br><br><br><br>
   
   <div class="cat-element">
-  <div *ngFor="let cat of cats; let i = index" [routerLink]="['/cat',i]">
-    {{ cat.breed }} <br>
-    {{ cat.firstname }} <br>
-    <img src="{{ cat.picture }}"> <br>
+  <div *ngFor="let cat of cats; let i = index">
+    <div  [routerLink]="['/cat',i]">
+      {{ cat.breed }} <br>
+      {{ cat.firstname }} <br>
+      <img src="{{ cat.picture }}"> <br>
+    </div>
+    <button (click)="onChooseCat(cat)">Vali kass</button>
+    <br><br>
   </div>
   </div>
   

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CatService } from '../cat.service';
+import { Cat } from '../cat.model';
 
 @Component({
   selector: 'app-cat-view',
@@ -8,9 +9,8 @@ import { CatService } from '../cat.service';
   styleUrls: ['./cat-view.component.css']
 })
 export class CatViewComponent implements OnInit {
-  cats = [];
-  cat: {breed: string, firstname: string, picture: string} =
-   {breed: "", firstname: "", picture: ""};
+  cats: Cat[] = [];
+  cat: Cat = new Cat("", "", "");
   i: number;
 
   constructor(private route: ActivatedRoute, private catService: CatService) { }
@@ -33,7 +33,7 @@ export class CatViewComponent implements OnInit {
        return this.toggle ? 'shortDate' : 'fullDate'; 
       }
 
-    toggleFormat() {
+    toggleFormat(): void {
       let tulemus = "";
       if (this.birthday.getFullYear()>2000) {
         tulemus = "tõene";

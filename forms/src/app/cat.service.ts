@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Cat } from './cat.model'
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,11 @@ export class CatService {
 
   constructor() { }
 
-  getCats() {
+  getCats(): Cat[] {
     return this.cats.slice();
   }
 
-  addCat(cat) {
+  addCat(cat: Cat) {
     this.cats.push(cat);
   }
 }
