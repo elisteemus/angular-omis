@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Item } from './item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,11 @@ items = [{"imgSrc":"https://i.ebayimg.com/thumbs/images/g/~CAAAOSwGyZeTpc5/s-l22
 
   constructor() { }
 
-  getItems() {
+  getItems(): Item[] {
     return this.items.slice();
+  }
+
+  addItem(item: Item): void {
+    this.items.push(item);
   }
 }

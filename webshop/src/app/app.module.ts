@@ -18,7 +18,9 @@ import { CartComponent } from './cart/cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { FilterUniquePipe } from './item/item-list/filter-unique.pipe';
-import { ToastService, AngularToastifyModule } from 'angular-toastify'; 
+import { ToastService, AngularToastifyModule } from 'angular-toastify';
+import { ItemEditComponent } from './item/item-edit/item-edit.component';
+import { ItemAdminAllComponent } from './item/item-admin-all/item-admin-all.component'; 
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { ToastService, AngularToastifyModule } from 'angular-toastify';
     LoginComponent,
     SignupComponent,
     CartComponent,
-    FilterUniquePipe
+    FilterUniquePipe,
+    ItemEditComponent,
+    ItemAdminAllComponent
   ],
   imports: [
     BrowserModule,

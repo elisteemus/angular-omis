@@ -1,3 +1,5 @@
+<div *ngIf="selectedCats.length==0">Ühtegi kassi ei ole valitud</div>
+
 <div *ngFor="let cat of selectedCats">
       {{ cat.breed }} <br>
       {{ cat.firstname }} <br>

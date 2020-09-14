@@ -17,7 +17,15 @@ export class CatService {
     return this.cats.slice();
   }
 
-  addCat(cat: Cat) {
+  getCat(index: number): Cat {
+    return this.cats[index];
+  }
+
+  addCat(cat: Cat): void {
     this.cats.push(cat);
+  }
+
+  editCat(cat: Cat, index: number) {
+    this.cats[index] = cat;
   }
 }

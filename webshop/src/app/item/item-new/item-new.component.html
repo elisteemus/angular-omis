@@ -1,1 +1,17 @@
-<p>item-new works!</p>
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+<label>Eseme pilt</label><br>
+<input ngModel name="imgSrc" type="text"><br>
+<label>Nimetus</label><br>
+<input ngModel name="title" type="text"><br>
+<label>Hind</label><br>
+<input ngModel name="price" type="text"><br>
+<label>Kategooria</label><br>
+<input ngModel name="category" type="text"><br>
+<br>
+<button type="submit">Salvesta</button>
+</form>
+
+<lib-toastify-toast-container
+[position]=" 'bottom-right' "
+[iconLibrary]="'material' "
+></lib-toastify-toast-container>

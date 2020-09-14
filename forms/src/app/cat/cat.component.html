@@ -23,6 +23,7 @@
       <img src="{{ cat.picture }}"> <br>
     </div>
     <button (click)="onChooseCat(cat)">Vali kass</button>
+    <button [routerLink]="['/cat-edit', i]">Muuda kassi</button>
     <br><br>
   </div>
   </div>

@@ -25,7 +25,7 @@ export class CartComponent implements OnInit {
     this.cartItems = this.cartService.getItemsInCart();
   }
 
-  onDeleteOne(i) {
+  onDeleteOne(i: number): void {
     this.cartService.removeItem(i);
     this.cartItems = this.cartService.getItemsInCart();
     this.cartSum = 0;
