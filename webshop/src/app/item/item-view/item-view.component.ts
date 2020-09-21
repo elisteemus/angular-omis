@@ -16,23 +16,29 @@ export class ItemViewComponent implements OnInit {
   constructor(
     private itemService: ItemService,
     private route: ActivatedRoute,
-    private cartService: CartService,
-    private _toastService: ToastService,
+    private cartService: CartService, 
+    private _toastService: ToastService
     ) { }
 
   ngOnInit(): void {
-  
     this.route.params.subscribe((params)=>{
-     let id = params["itemId"];
-     this.item = this.itemService.items[id];
-
+      // console.log(params);
+      // console.log(params["itemId"]);
+      // console.log(params.itemId);
+      // this.item["itemId"];
+      // this.item.itemId;
+      let id = params["itemId"];
+      this.item = this.itemService.getItem(id);
+      // objektile[1] - parameetri väärtuse, mille key on 1 {1: "ANNAB VÄÄRTUSE"}
+      // massiivile[1] - elemendi teisel kohal [{},{ANNAB SELLE}]
     });
 
+// (MUUTUJA)=>{TEEME MIDAGI SELLE MUTUUJAGA}
+// function (MUUTUJA) {TEEME MIDAGI SELLE MUUTUJAGA}
   }
 
   onAddToCart(): void {
     this.cartService.addItem(this.item);
     this._toastService.success('Edukalt ostukorvi lisatud');
   }
-
 }

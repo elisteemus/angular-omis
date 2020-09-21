@@ -1,1 +1,25 @@
-<p>item-edit works!</p>
+<div class="input-form">
+  <h2>Eseme muutmine</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="editItemForm">
+    <div class="input-form-field">
+      <input type="text" formControlName="imgSrc" required="">
+      <label>Eseme pilt</label>
+    </div>
+    <div class="input-form-field">
+      <input type="text"  formControlName="title" required="">
+      <label>Nimetus</label>
+    </div>
+    <div class="input-form-field">
+      <input type="text" formControlName="price" required="">
+      <label>Hind</label>
+    </div>
+    <div class="input-form-field">
+      <input type="text" formControlName="category" required="">
+      <label>Kategooria</label>
+    </div>
+    <button class="main-button" type="submit" [disabled]
+    ="!editItemForm.valid">
+    Muuda
+  </button>
+  </form>
+</div>

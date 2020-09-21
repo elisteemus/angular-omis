@@ -10,12 +10,13 @@ import { NotFoundComponent } from './global/not-found/not-found.component';
 import { ItemEditComponent } from './item/item-edit/item-edit.component';
 import { ItemAdminAllComponent } from './item/item-admin-all/item-admin-all.component';
 
+
 const routes: Routes = [
   { path: '', component: ItemListComponent },
   { path: 'item/new', component: ItemNewComponent },
   { path: 'item/all', component: ItemAdminAllComponent },
   { path: 'item/:itemId', component: ItemViewComponent },
-  { path: 'item/edit/:itemId', component: ItemEditComponent},
+  { path: 'item/edit/:itemId', component: ItemEditComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'registrate', redirectTo: "signup" },

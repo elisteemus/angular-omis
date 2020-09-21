@@ -1,3 +1,33 @@
+<div class="input-form">
+    <h2>Eseme lisamine</h2>
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <div class="input-form-field">
+        <input type="text" ngModel name="imgSrc" required="">
+        <label>Eseme pilt</label>
+      </div>
+      <div class="input-form-field">
+        <input type="text"  ngModel name="title" required="">
+        <label>Nimetus</label>
+      </div>
+      <div class="input-form-field">
+        <input type="text" ngModel name="price" required="">
+        <label>Hind</label>
+      </div>
+      <div class="input-form-field">
+        <input type="text" ngModel name="category" required="">
+        <label>Kategooria</label>
+      </div>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </a>
+    </form>
+  </div>
+
+
 <form (ngSubmit)="onSubmit(form)" #form="ngForm">
 <label>Eseme pilt</label><br>
 <input ngModel name="imgSrc" type="text"><br>
@@ -8,7 +38,7 @@
 <label>Kategooria</label><br>
 <input ngModel name="category" type="text"><br>
 <br>
-<button type="submit">Salvesta</button>
+<button type="submit" class="main-button">Salvesta</button>
 </form>
 
 <lib-toastify-toast-container

@@ -1,14 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './global/menu/menu.component';
 import { FooterComponent } from './global/footer/footer.component';
 import { HeaderComponent } from './global/header/header.component';
 import { NotFoundComponent } from './global/not-found/not-found.component';
-import { ItemListComponent } from './item/item-list/item-list.component';
 import { ItemComponent } from './item/item.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
 import { ItemViewComponent } from './item/item-view/item-view.component';
 import { ItemNewComponent } from './item/item-new/item-new.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
@@ -22,6 +27,9 @@ import { ToastService, AngularToastifyModule } from 'angular-toastify';
 import { ItemEditComponent } from './item/item-edit/item-edit.component';
 import { ItemAdminAllComponent } from './item/item-admin-all/item-admin-all.component'; 
 
+export function createHttpLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -30,8 +38,8 @@ import { ItemAdminAllComponent } from './item/item-admin-all/item-admin-all.comp
     FooterComponent,
     HeaderComponent,
     NotFoundComponent,
-    ItemListComponent,
     ItemComponent,
+    ItemListComponent,
     ItemViewComponent,
     ItemNewComponent,
     AuthenticationComponent,
@@ -48,7 +56,16 @@ import { ItemAdminAllComponent } from './item/item-admin-all/item-admin-all.comp
     FormsModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    AngularToastifyModule,
+    AngularToastifyModule, 
+    ReactiveFormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+          useFactory: createHttpLoader, 
+          deps: [HttpClient]
+      }
+    })
   ],
   providers: [ToastService],
   bootstrap: [AppComponent]

@@ -13,7 +13,6 @@ export class ItemAdminAllComponent implements OnInit {
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
-    this.items = this.itemService.items;
+    this.items = this.itemService.getItems();
   }
-
 }
