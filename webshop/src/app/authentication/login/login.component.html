@@ -1,9 +1,10 @@
+{{ error }}
 <div class="cont" [class.s--signup]="isSignUp">
-  <form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)" class="form sign-in">
+  <form #signInForm="ngForm" (ngSubmit)="onLogin(signInForm)" class="form sign-in">
     <h2>Welcome back,</h2>
     <label>
       <span>Email</span>
-      <input type="email" ngModel name="email" required/>
+      <input type="email" ngModel name="username" required/>
     </label>
     <label>
       <span>Password</span>
@@ -31,12 +32,8 @@
     <form #signUpForm="ngForm" (ngSubmit)="onSignUp(signUpForm)" class="form sign-up">
       <h2>Time to feel like home,</h2>
       <label>
-        <span>Name</span>
-        <input type="text" ngModel name="name" required/>
-      </label>
-      <label>
         <span>Email</span>
-        <input type="email" ngModel name="email" required/>
+        <input type="email" ngModel name="username" required/>
       </label>
       <label>
         <span>Password</span>
