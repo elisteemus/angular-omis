@@ -25,7 +25,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { FilterUniquePipe } from './item/item-list/filter-unique.pipe';
 import { ToastService, AngularToastifyModule } from 'angular-toastify';
 import { ItemEditComponent } from './item/item-edit/item-edit.component';
-import { ItemAdminAllComponent } from './item/item-admin-all/item-admin-all.component'; 
+import { ItemAdminAllComponent } from './item/item-admin-all/item-admin-all.component';
+import { FilterCategoryPipe } from './item/item-list/filter-category.pipe'; 
 
 export function createHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -48,7 +49,8 @@ export function createHttpLoader(http: HttpClient) {
     CartComponent,
     FilterUniquePipe,
     ItemEditComponent,
-    ItemAdminAllComponent
+    ItemAdminAllComponent,
+    FilterCategoryPipe
   ],
   imports: [
     BrowserModule,

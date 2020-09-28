@@ -1,15 +1,39 @@
-<mat-form-field appearance="fill">
-    <mat-label>{{'Vali kategooria' | translate}}</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let item of items | filterUnique" [value]="item.category">
-        {{item.category}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-  
+<br>
+<div class="selects">
+    <mat-form-field appearance="fill">
+      <mat-label>{{'Vali kategooria' | translate}}</mat-label>
+      <mat-select [(ngModel)]="selectedCategory">
+        <mat-option value="all">Kõik esemed</mat-option>
+        <mat-option *ngFor="let item of itemsShown | filterUnique" [value]="item.category">
+          {{item.category}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>{{'Järjesta' | translate}}</mat-label>
+      <mat-select>
+        <mat-option value="" (click)="onTitleAsc()">A - Z</mat-option>
+        <mat-option value="" (click)="onTitleDesc()">Z - A</mat-option>
+        <mat-option value="" (click)="onPriceAsc()">Hind kasvab</mat-option>
+        <mat-option value="" (click)="onPriceDesc()">Hind kahaneb</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>{{'Hinnavahemik' | translate}}</mat-label>
+      <mat-select>
+        <mat-option value="" (click)="onPriceFilter(10)">Kuni 10 €</mat-option>
+        <mat-option value="" (click)="onPriceFilter(50)">Kuni 50 €</mat-option>
+        <mat-option value="" (click)="onPriceFilter(100)">Kuni 100 €</mat-option>
+        <mat-option value="" (click)="onShowAll()">Kõik</mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+
   <div class="items">
-    <div class="item" *ngFor="let item of items; let i = index" [routerLink]="['item',i]">
+    <div class="item" *ngFor="let item of itemsShown | filterCategory:selectedCategory; let i = index" 
+    [routerLink]="['item',i]">
       <img src="{{ item.imgSrc }}">
       <p> {{ item.title }} </p>
       <p> {{ item.price }} € </p>

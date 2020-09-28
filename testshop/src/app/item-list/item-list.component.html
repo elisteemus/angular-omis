@@ -1,0 +1,8 @@
+<div class="items">
+<div class="item" *ngFor="let item of items; let i = index">
+    <img src="{{ item.imgSrc }}">
+    <p> {{ item.title }} </p>
+    <p> {{ item.price }} € </p>
+    <button [routerLink]="['item', i]">Muuda</button>
+</div>
+</div>

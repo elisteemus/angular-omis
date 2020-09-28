@@ -1,0 +1,23 @@
+<div class="input-form">
+<form
+(ngSubmit)="onSubmit()"
+[formGroup]="itemEditForm">
+    <div class="input-form-field">
+        <input formControlName="imgSrc" type="text">
+        <label>Pilt</label>
+    </div>
+    <div class="input-form-field">
+        <input formControlName="title" type="text">
+        <label>Nimi</label>
+    </div>
+    <div class="input-form-field">
+        <input formControlName="price" type="text">
+        <label>Hind</label>
+    </div>
+    <div class="input-form-field">
+        <input formControlName="category" type="text">
+        <label>Kategooria</label>
+    </div>
+    <button class="main-button" type="submit">Muuda</button>
+</form>
+</div>
