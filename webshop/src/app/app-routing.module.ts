@@ -9,14 +9,15 @@ import { CartComponent } from './cart/cart.component';
 import { NotFoundComponent } from './global/not-found/not-found.component';
 import { ItemEditComponent } from './item/item-edit/item-edit.component';
 import { ItemAdminAllComponent } from './item/item-admin-all/item-admin-all.component';
+import { AuthGuard } from './authentication/auth.guard';
 
 
 const routes: Routes = [
   { path: '', component: ItemListComponent },
-  { path: 'item/new', component: ItemNewComponent },
-  { path: 'item/all', component: ItemAdminAllComponent },
+  { path: 'item/new', component: ItemNewComponent, canActivate: [AuthGuard] },
+  { path: 'item/all', component: ItemAdminAllComponent, canActivate: [AuthGuard] },
   { path: 'item/:itemId', component: ItemViewComponent },
-  { path: 'item/edit/:itemId', component: ItemEditComponent },
+  { path: 'item/edit/:itemId', component: ItemEditComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'registrate', redirectTo: "signup" },

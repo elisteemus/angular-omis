@@ -8,7 +8,12 @@
         <img class="delete-button" (click)="onDeleteOne(i)" src="assets\trashbin.png">
         <br><br>
     </div>
-    <div class="total-sum">SUMMA KOKKU: {{ cartSum }} € </div>
+    <div class="total-sum">{{'SUMMA KOKKU:' | translate}} {{ cartSum }} € </div>
 </div>
  
-<div *ngIf="cartItems.length == 0">Esemeid ostukorvis pole</div>
+<div class="no-items" *ngIf="cartItems.length == 0">Esemeid ostukorvis pole</div>
+
+<lib-toastify-toast-container
+[position]=" 'bottom-right' "
+[iconLibrary]=" 'material' "
+></lib-toastify-toast-container>

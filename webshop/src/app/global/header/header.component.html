@@ -1,11 +1,18 @@
 <div class="header">
     <img src="assets\FAVPNG_computer-icon_sR13FXVt.png" routerLink="/">
-    <button routerLink="/item/new">{{'Lisa uus ese' | translate }}</button>
-    <button routerLink="/item/all">Vaata kõiki esemeid</button>
+    <button *ngIf="loggedIn" routerLink="/item/new">{{'Lisa uus ese' | translate }}</button>
+    <button *ngIf="loggedIn" routerLink="/item/all">Vaata kõiki esemeid</button>
     <div>
-      <div class="header-link" routerLink="login">Logi sisse / Registreeru</div>
+      <div *ngIf="loggedIn" class="header-link" (click)="onLogout()">Logi välja</div>
+      <div *ngIf="!loggedIn" class="header-link" routerLink="login">Logi sisse / Registreeru</div>
       <div class="header-link" routerLink="cart"><img src="assets\shopping-cart.svg"></div>
-      <button (click)="useLanguage('en')">en</button>
-      <button (click)="useLanguage('ee')">ee</button>
+      <div id="flags">
+        <span (click)="useLanguage('en')">
+          <img src="assets\estonia.svg">
+        </span>
+        <span (click)="useLanguage('ee')">
+          <img src="assets\united-kingdom.svg">
+        </span>
+      </div>
     </div>
   </div>

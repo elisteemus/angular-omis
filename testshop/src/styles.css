@@ -1,1 +1,164 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: rgb(241, 241, 238);
+  }
+   
+  *:focus {
+    outline: none;
+  }
+   
+  html, body { height: 100%; }
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+   
+  .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(219, 219, 221);
+    height: 100px;
+  }
+   
+  .items {
+    display: flex;
+    max-width: 800px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+   
+  .item {
+    background-color: white;
+    color: darkblue;
+    width: 182px;
+    margin: 10px 7px;
+    border-radius: 10px;
+  }
+   
+  .item:hover {
+    transition: .5s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .35);
+    cursor: pointer;
+  }
+   
+  .item img {
+    height: 150px;
+    width: 150px;
+    padding: 15px;
+    border-radius: 10%;
+  }
+   
+  .item:hover img {
+    transition: .5s;
+    transform: scale(1.1);
+  }
+   
+  .item p {
+    padding: 0 15px;
+  }
+   
+  .main-button {
+    background-color:rgb(219, 219, 221);
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    opacity: 0.7;
+    border-radius: 10px;
+  }
+   
+  .main-button:hover{
+    transition: .5s;
+    opacity: 1.0;
+  }
+   
+  .input-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+   
+  .input-form h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+   
+  .input-form .input-form-field {
+    position: relative;
+  }
+   
+  .input-form .input-form-field input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .input-form .input-form-field label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: -10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+   
+  .input-form .input-form-field input:focus ~ label,
+  .input-form .input-form-field input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+   
+  .cart-page {
+    width: 90%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 15px;
+  }
+   
+  .cart-item {
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 1px solid gray;
+  }
+   
+  .cell {
+    padding-top: 4%;
+    margin: 0 auto;
+    font-size: 20px;
+  }
+   
+  .total-sum {
+    font-size: 30px;
+    margin: 20px 35%;
+  }
+   
+  .delete-button {
+    margin-top: 60px;
+    height: 40px;
+    opacity: 0.7;
+  }
+   
+  .delete-button:hover {
+    cursor: pointer;
+    opacity: 1.0;
+  }

@@ -21,3 +21,12 @@
     width: 40px;
     height: 40px;
 }
+
+#flags {
+    text-align: center;
+}
+
+.header span img {
+    width: 20px;
+    height: 20px;
+}

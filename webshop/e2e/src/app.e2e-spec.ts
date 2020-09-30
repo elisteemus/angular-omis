@@ -9,8 +9,8 @@ describe('workspace-project App', () => {
   });
 
   it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('webshop app is running!');
+    page.clickOnLogin();
+    expect(browser.getCurrentUrl()).toEqual("/login");
   });
 
   afterEach(async () => {
